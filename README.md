@@ -1,10 +1,15 @@
 # NAME
 
-Test::Delegation - It's new $module
+Test::Delegation - Make easy to test delegation methods
 
 # SYNOPSIS
 
     use Test::Delegation;
+
+    delegate_ok $class, 'foo', 'bar'; # $class->bar->foo(...) is delegated by $class->foo(...)
+
+    # sub foo { shift->bar->foo(@_) }
+    # sub bar { ... }
 
 # DESCRIPTION
 

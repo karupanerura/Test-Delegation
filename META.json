@@ -1,5 +1,5 @@
 {
-   "abstract" : "It's new $module",
+   "abstract" : "Make easy to test delegation methods",
    "author" : [
       "karupanerura <karupa@cpan.org>"
    ],
