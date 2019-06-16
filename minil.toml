@@ -1,0 +1,5 @@
+name = "Test-Delegation"
+# badges = ["travis-ci.com"]
+module_maker="ModuleBuildTiny"
+static_install = "auto"
+
