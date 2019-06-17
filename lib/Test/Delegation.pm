@@ -6,14 +6,14 @@ use warnings;
 our $VERSION = "0.01";
 
 use parent qw/Test::Builder::Module/;
-our @EXPORT = qw/delegate_ok/;
+our @EXPORT = qw/delegation_ok/;
 
 use Test::Mock::Guard qw/mock_guard/;
 use Test::MockObject;
 
 my $CLASS = __PACKAGE__;
 
-sub delegate_ok ($$$) {
+sub delegation_ok ($$$;$) {
     my ($context, $method, $delegation, $message) = @_;
     $message ||= sprintf '%s::%s is delegated to %s::%s', $context || ref $context, $method, $context || ref $context, $delegation;
 
@@ -43,7 +43,7 @@ Test::Delegation - Make easy to test delegation methods
 
     use Test::Delegation;
 
-    delegate_ok $class, 'foo', 'bar'; # $class->bar->foo(...) is delegated by $class->foo(...)
+    delegation_ok $class, 'foo', 'bar'; # $class->bar->foo(...) is delegated by $class->foo(...)
 
     # sub foo { shift->bar->foo(@_) }
     # sub bar { ... }
